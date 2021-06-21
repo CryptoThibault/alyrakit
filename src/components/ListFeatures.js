@@ -1,4 +1,5 @@
 import working from "../assets/working.svg";
+import { Text, Container, Image, List, ListItem } from "@chakra-ui/react";
 
 const ListFeatures = () => {
   const list = [
@@ -8,21 +9,21 @@ const ListFeatures = () => {
     "Integration ready",
   ];
   return (
-    <div>
-      <img
+    <Container>
+      <Image
         src={working}
         alt="Illustration with a computer on the desk"
         width="400"
         height="295"
       />
 
-      <h2>The most useful resource ever created for designers</h2>
-      <ul>
+      <Text>The most useful resource ever created for designers</Text>
+      <List>
         {list.map((el, index) => {
-          return <li key={index}>{el}</li>;
+          return <ListItem key={index}>{el}</ListItem>;
         })}
-      </ul>
-    </div>
+      </List>
+    </Container>
   );
 };
 

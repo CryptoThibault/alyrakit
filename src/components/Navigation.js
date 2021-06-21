@@ -1,19 +1,21 @@
+import { Container, List, ListItem, Link } from "@chakra-ui/react";
+
 const Navigation = () => {
   return (
-    <nav>
-      <a href="/">AlyraKit</a>
-      <ul>
-        <li>
-          <a href="/#sample">Sample</a>
-        </li>
-        <li>
-          <a href="/#pricing">Pricing</a>
-        </li>
-        <li>
-          <a href="/#buy-now">Buy now</a>
-        </li>
-      </ul>
-    </nav>
+    <Container>
+      <Link href="/">AlyraKit</Link>
+      <List>
+        <ListItem>
+          <Link href="/#sample">Sample</Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/#pricing">Pricing</Link>
+        </ListItem>
+        <ListItem>
+          <Link href="/#buy-now">Buy now</Link>
+        </ListItem>
+      </List>
+    </Container>
   );
 };
 

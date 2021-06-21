@@ -6,21 +6,22 @@ import ListFeatures from "./ListFeatures";
 import Navigation from "./Navigation";
 import Pricing from "./Pricing";
 import Sample from "./Sample";
+import { Box } from "@chakra-ui/react";
 
 const LandingPage = () => {
   return (
-    <div>
+    <Box>
       <Navigation />
       <Header />
-      <main>
+      <Box>
         <Features />
         <ListFeatures />
         <Sample />
         <Pricing />
         <GetStarted />
-      </main>
+      </Box>
       <Footer />
-    </div>
+    </Box>
   );
 };
 
