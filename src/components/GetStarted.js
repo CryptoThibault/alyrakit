@@ -10,7 +10,7 @@ const GetStarted = () => {
       </p>
       <button>Buy now</button>
     </section>
-  )
-}
+  );
+};
 
-export default GetStarted
+export default GetStarted;
