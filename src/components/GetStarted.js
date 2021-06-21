@@ -1,23 +1,25 @@
-import { Text, Button, Container } from "@chakra-ui/react";
+import { Badge, Text, Button, Box, Container } from "@chakra-ui/react";
 
 const GetStarted = () => {
   return (
-    <Container id="buy-now" py="6" my="6" bg="teal" color="white" centerContent>
-      <Text fontWeight="bold" pb="6" fontSize="4xl">
-        Get Started
-      </Text>
-      <Text fontSize="xl" pb="3">
-        Get AlyraKit and save your time
-      </Text>
-      <Text as="i">
-        Stop wasting time trying to do it the "right way" and build a site from
-        scratch. AlyraKit is faster, easier, and you still have complete
-        control.
-      </Text>
-      <Button bg="white" color="black" m="6" size="md">
-        Buy now
-      </Button>
-    </Container>
+    <Box as="section" id="buy-now" py="24" bg="teal.900" color="white">
+      <Container centerContent>
+        <Badge borderRadius="lg" bg="teal.800" color="muted">
+          Get Started
+        </Badge>
+        <Text py="4" fontSize="4xl">
+          Get AlyraKit and save your time
+        </Text>
+        <Text textAlign="center">
+          Stop wasting time trying to do it the "right way" and build a site
+          from scratch. AlyraKit is faster, easier, and you still have complete
+          control.
+        </Text>
+        <Button bg="teal.500" mt="6" size="lg">
+          Buy now
+        </Button>
+      </Container>
+    </Box>
   );
 };
 

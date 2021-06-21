@@ -1,12 +1,5 @@
 import working from "../assets/working.svg";
-import {
-  Text,
-  Container,
-  Image,
-  List,
-  ListItem,
-  ListIcon,
-} from "@chakra-ui/react";
+import { Text, Box, Image, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 
 const ListFeatures = () => {
@@ -17,15 +10,14 @@ const ListFeatures = () => {
     "Integration ready",
   ];
   return (
-    <Container>
+    <Box as="section" bg="gray.50">
       <Image
         src={working}
         alt="Illustration with a computer on the desk"
         width="400"
         height="295"
       />
-
-      <Text fontSize="xl" py="8px">
+      <Text fontSize="4xl" py="8px">
         The most useful resource ever created for designers
       </Text>
       <List spacing="8px" m="16px">
@@ -38,7 +30,7 @@ const ListFeatures = () => {
           );
         })}
       </List>
-    </Container>
+    </Box>
   );
 };
 

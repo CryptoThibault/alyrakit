@@ -52,7 +52,7 @@ const Pricing = () => {
         <Box d={["block", null, "flex"]} alignItems="center">
           <Box bg="white" shadow="lg" flex="1" zIndex="1" mb={[6, 6, 0]}>
             <Center pt="6">
-              <Badge>Standard</Badge>{" "}
+              <Badge borderRadius="lg">Standard</Badge>{" "}
             </Center>
             <Center>
               <Text as="b" fontSize="6xl">
@@ -82,7 +82,7 @@ const Pricing = () => {
 
           <Box bg="white" shadow="lg" flex="1">
             <Center pt="6">
-              <Badge>Entreprise</Badge>
+              <Badge borderRadius="lg">Entreprise</Badge>
             </Center>
             <Text textAlign="center" p="6" fontSize="lg">
               We offer variable pricing with discounts for larger organizations.
