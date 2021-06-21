@@ -1,5 +1,13 @@
 import working from "../assets/working.svg";
-import { Text, Container, Image, List, ListItem } from "@chakra-ui/react";
+import {
+  Text,
+  Container,
+  Image,
+  List,
+  ListItem,
+  ListIcon,
+} from "@chakra-ui/react";
+import { CheckCircleIcon } from "@chakra-ui/icons";
 
 const ListFeatures = () => {
   const list = [
@@ -17,10 +25,17 @@ const ListFeatures = () => {
         height="295"
       />
 
-      <Text>The most useful resource ever created for designers</Text>
-      <List>
+      <Text fontSize="xl" py="8px">
+        The most useful resource ever created for designers
+      </Text>
+      <List spacing="8px" m="16px">
         {list.map((el, index) => {
-          return <ListItem key={index}>{el}</ListItem>;
+          return (
+            <ListItem key={index}>
+              <ListIcon as={CheckCircleIcon} color="teal.300" />
+              {el}
+            </ListItem>
+          );
         })}
       </List>
     </Container>
