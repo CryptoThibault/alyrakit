@@ -6,6 +6,7 @@ import {
   List,
   ListItem,
   ListIcon,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import working from "../assets/working.svg";
 import { CheckCircleIcon } from "@chakra-ui/icons";
@@ -16,8 +17,9 @@ const ListFeatures = () => {
     "Tech support",
     "Integration ready",
   ];
+  const bg = useColorModeValue("gray.50", "teal.700");
   return (
-    <Box as="section" bg="gray.50" py="24">
+    <Box as="section" bg={bg} py="24">
       <Container maxW="container.lg">
         <Stack
           direction={["column", null, "row"]}
@@ -35,7 +37,7 @@ const ListFeatures = () => {
             />
           </Box>
           <Box flex="1">
-            <Heading mb="6">
+            <Heading mb="6" fontFamily="special">
               The most useful resource ever created for designers
             </Heading>
             <List

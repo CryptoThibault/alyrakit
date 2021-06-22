@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCountUp } from "react-countup";
 import PricingSwitch from "./PricingSwitch";
 import {
   Box,
@@ -11,6 +11,7 @@ import {
   ListItem,
   ListIcon,
   Button,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { CheckCircleIcon } from "@chakra-ui/icons";
 
@@ -26,19 +27,26 @@ const Pricing = () => {
     "Speedy build tooling",
     "6 months free support included",
   ];
-  const [price, setPrice] = useState(config.yearly);
+  const { countUp, update } = useCountUp({
+    start: config.yearly,
+    end: config.monthly,
+    delay: 0,
+    startOnMount: false,
+    duration: 0.6,
+  });
   const handleSwitchChange = (e) => {
     if (e.target.checked) {
-      setPrice(config.monthly);
+      update(config.monthly);
     } else {
-      setPrice(config.yearly);
+      update(config.yearly);
     }
   };
-
+  const bgPricing = useColorModeValue("gray.50", "teal.700");
+  const bg = useColorModeValue("white", "teal.800");
   return (
-    <Box as="section" bg="gray.50" id="pricing" py="20">
+    <Box as="section" bg={bgPricing} id="pricing" py="20">
       <Container maxW="container.md">
-        <Heading textAlign="center" mb="6">
+        <Heading textAlign="center" mb="6" fontFamily="special">
           Fair, simple pricing for all
         </Heading>
 
@@ -50,13 +58,13 @@ const Pricing = () => {
         <PricingSwitch onChange={handleSwitchChange} />
 
         <Box d={["block", null, "flex"]} alignItems="center">
-          <Box bg="white" shadow="lg" flex="1" zIndex="1" mb={[6, 6, 0]}>
+          <Box bg={bg} shadow="lg" flex="1" zIndex="1" mb={[6, 6, 0]}>
             <Center pt="6">
-              <Badge borderRadius="lg">Standard</Badge>{" "}
+              <Badge>Standard</Badge>{" "}
             </Center>
             <Center>
               <Text as="b" fontSize="6xl">
-                {price}
+                {countUp}
               </Text>{" "}
               /mo
             </Center>
@@ -80,9 +88,9 @@ const Pricing = () => {
             </Button>
           </Box>
 
-          <Box bg="white" shadow="lg" flex="1">
+          <Box bg={bg} shadow="lg" flex="1">
             <Center pt="6">
-              <Badge borderRadius="lg">Entreprise</Badge>
+              <Badge>Entreprise</Badge>
             </Center>
             <Text textAlign="center" p="6" fontSize="lg">
               We offer variable pricing with discounts for larger organizations.
